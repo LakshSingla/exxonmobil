@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Apogee Exxon Mobil Hackathon</title>
+
+	<meta name = "viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta charset="utf-8">
+	<meta name="copyright" content="Copyright Â© 2018 Department Of Visual Media, BITS Pilani">
+	<meta name="author" content="Department Of Visual Media, BITS Pilani">
+
+	<link rel="stylesheet" href="style.css">
+
+	<style>
+		#ex-logo{
+			height: 10vh;
+			transform: translateY(3vh)
+		}
+		#Member2 {
+			display: none;
+		}
+		@media all and (max-width: 440px) {
+			#ex-format{
+				display: none;
+			}
+		}
+		@media all and (min-width: 800px){
+			#ex-logo{
+				height: 15vh;
+				transform: translateY(4.28vh);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class = "wrapper">
+		<div class = "nav">
+			<div class="logo">
+				<img src = "img/logo1.png">
+				<img src = "img/logo2.png">
+			</div>
+			<div class = "menu">
+				<img src = "img/menu.png" style="cursor: pointer;">
+			</div>
+
+			<div class="nav-opt nav-contact">CONTACT</div>
+			<!-- <div class="nav-opt nav-faq">FAQS</div> -->
+			<div class="nav-opt nav-rules">RULES</div>
+			<!-- <div class="nav-opt nav-overview">OVERVIEW</div> -->
+			<div class="nav-opt nav-home">HOME</div>
+		</div>
+
+		<div class = "home-body">
+			<div class = "title">APOGEE<br>
+				<!-- <span style="text-transform: capitalize !important;">ExxonMobil Hackathon</span> -->
+				<img src="img/exmo_white.png" alt="" id="ex-logo" ><span id="ex-format">&nbsp;</span>Hackathon
+			</div>
+			<div class = "register-button">REGISTER</div>
+		</div>
+
+		<div class = "problem-body bodies">
+			<!-- <div class = "problem-heading">AIC 2018</div> -->
+
+			<div class = "company-wrap c1">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">IBM</div>
+						<div class = "about">Develop a portal for student union elections in a university using blockchain technology (using HyperLedger).
+						<br>
+						<a style = "color:#100023;" target = "_blank" href = "https://drive.google.com/file/d/0B55_-cRCwbizdWVPandSMWUwTTNBYjdGV2phU1V5VkRfeFRz/view?usp=sharing">Please Follow this link</a>
+
+						<br><!-- Go to: <a style="text-decoration: none; color:#867cf4;" href="http://www.davinci-creations.com">davinci-creations.com</a> --></div>
+					</div>
+				</div>
+				<!-- <div class = "company-logo">
+					<img src = "img/companies/davinci-creations.JPG">
+				</div> -->
+			</div>
+
+			<!-- <div class = "company-wrap c2">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">ERICSSON</div>
+						<a style="text-decoration: none;" target = "_blank" href = "problems/Ericsson Problem Statement.pdf"><div class = "download">Download Problem Statement</div></a>
+						<div class = "about">Ericsson is one of the leading brands in the field of networking and telecom headquartered in Stockholm. It offers services, software and infrastructure in IT for telecom operators,mobile and fixed broadband, operations and business support services,cable television, IPTV and video systems. It is presently working on the revolutionary 5G technology.</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/eric_logo.jpg">
+				</div>
+			</div>
+
+			<div class = "company-wrap c3">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">GE Healthcare</div>
+						<a style="text-decoration: none;" target = "_blank" href="problems/AR problem statement from GE healthcare.docx"><div class = "download" style = "margin-bottom: 1vh;">Download Problem Statement(Augmented Reality)</div></a>
+						<a style="text-decoration: none;" target = "_blank" href="problems/IoT GE Healthcare.pptx"><div class = "download">Download Problem Statement(IoT)</div></a>
+						<div class = "about">​​​GE Healthcare is an American pharmaceutical company and medical equipment manufacturer. It is a subsidiary of General Electric (GE), formerly headquartered in Little Chalfont, Buckinghamshire, United Kingdom; in early 2016 headquarters were moved to Chicago. The company provides medical imaging and information technologies, medical diagnostics, patient monitoring systems, drug discovery, bio pharmaceutical manufacturing technologies and performance solutions services.</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/GE_Healthcare_Logo_RGB.jpg">
+				</div>
+			</div>
+
+			<div class = "company-wrap c4">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">HackerEarth</div>
+						<a style="text-decoration: none;" target = "_blank" href = "https://aichack.hackerearth.com/"><div class = "download">Go to the Hackathon link</div></a>
+						<div class = "about">​HackerEarth is a technology company that provides recruitment solutions. It helps companies find innovative solutions for their businesses. They love innovators who solve real world problems. It is also a platform for people to participate in hackathons and competitions and code their way into the industry. ​</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/hackerearth-logo.jpg">
+				</div>
+			</div>
+
+			<div class = "company-wrap c5">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">IPCA</div>
+						<a style="text-decoration: none;" target = "_blank" href = "problems/IPCA Problem Staement.pdf"><div class = "download">Download Problem Statement</div></a>
+						<div class = "about">Ipca Laboratories is an international pharmaceutical company based in Mumbai, India. It produces Theo bromine, Acetylthiophene, and P-Bromo Toluene as Active Pharmaceutical Ingredients (APIs). Ipca sells these APIs and their intermediates world over. It produces more than 150 formulations that include oral liquids, tablets, dry powders, and capsules. The various kinds of drug intermediates that the company manufactures include Theo bromine, Acetylthiophene, and P- Bromo Toluene and promotes over 36 countries of Asia, Africa, CIS, and South America, including Cambodia, Kazakhstan, Kenya, Mauritius, Myanmar, Nigeria, Oman, Russia, Sri Lanka, Sudan, Tanzania, Ukraine, Vietnam and Yemen. The main activities of company are to produce and market pharmaceuticals and drugs. The various products of the company include formulations, drug intermediates, and active pharmaceutical ingredients (API).</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/Ipca_Logo_JPG.jpg">
+				</div>
+			</div>
+
+			<div class = "company-wrap c6">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">HarVa</div>
+						<a style="text-decoration: none;" target = "_blank" href = "problems/Harva Problem Statement AIC.pdf")'><div class = "download">Download Problem Statement</div></a>
+						<div class = "about">HarVa is an Indian Business process outsourcing Organization.It is the first NPO set up in rural India which employs only women.It also has a division, Community Based Farming & Waste Management, which trains men in latest farming techniques. The rural start up primarily focuses on Skill Development, BPO, Community based farming and Microfinance.</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/logo.png">
+				</div>
+			</div>
+
+			<div class = "company-wrap c7">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">Rolls-Royce</div>
+						<a style="text-decoration: none;" target = "_blank" href = "problems/Rolls-Royce Problem Staement.pdf"><div class = "download">Download Problem Statement</div></a>
+						<div class = "about">Rolls-Royce is a global company providing highly-efficient integrated power and propulsion solutions. Our power systems are predominantly used in aerospace, marine, energy and off-highway applications.
+						</div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/Rolls_royce_logo_png.54de0d0b4a079.jpg">
+				</div>
+			</div>
+
+			<div class = "company-wrap c8">
+				<div class = "company-info">
+					<div class = "company-fade">
+						<div class = "company-name">GNOMIKX</div>
+						<a style="text-decoration: none;" target = "_blank" href = "problems/GnomikX Problem Statement.pdf"><div class = "download">Download Problem Statement</div></a>
+						<div class = "about">​​GNOMIKX is healthcare company. It offers personal genomics test for various lifestyle diseases like Diabetes, Obesity and Hypertension.
+						<br>Go to: <a style="text-decoration: none; color:#867cf4;" href = "http://www.gnomikx.com">gnomikx.com</a></div>
+					</div>
+				</div>
+				<div class = "company-logo">
+					<img src = "img/companies/logo (2).png">
+				</div>
+			</div>
+
+			<img class = "up-arrow" src = "img/up.svg">
+			<img class = "down-arrow" src = "img/down.svg"> -->
+
+		</div>
+
+		<div class = "rules-body bodies" style = "overflow-y:scroll;overflow-x: hidden;">
+			<div class = "title">RULES</div>
+			<div class = "content" style="text-align: center;">
+					1. Teams should be of 2 or 3
+				<br>2. Problem statemnts will be revealed on 22nd February
+				<br>3. Solutions should be uploaded on the portal itself after the problem statement has been revealed, and before 11:59PM, 27<sup>th</sup> (5 day hackathon).
+			</div>
+				<!-- <br>The participants must upload their solutions on the portal given in the APOGEE website by 17th Feb'18.
+				<br>The participants must present their solutions (in the form of PPT) to the company.
+				<br>Internships and possible job offers await the winners (one or more from each category) along with cash prizes and goodies.</div> -->
+		</div>
+
+		<div class = "contact-body bodies">
+			<div class = "title">CONTACT</div>
+			<div class = "content">Keshav Jain
+				<br>+91-8320841501
+				<br>Megha
+				<br>+91-8209147411
+			</div>
+		</div>
+
+		<!-- <div class = "bot-nav"> -->
+			<!-- <img class = "big-arrow" src = "img/big-arrow.svg"></img> -->
+			<!-- <span class = "problems">VIEW PROBLEM STATEMENT</span> -->
+		<!-- </div> -->
+
+		<div class = "hamburger">
+			<div class = "ham-nav">
+				<div class = "arrow">
+					<img src = "img/arrow.png" style="cursor: pointer;">
+				</div>
+
+				<div class="logo">
+					<img src = "img/logo1.png">
+					<img src = "img/logo2.png">
+				</div>
+			</div>
+
+			<div class = "ham-body">
+				<div class = "ham-opt ham-home" style="cursor: pointer;">HOME</div>
+				<!-- <div class = "ham-opt ham-overview">OVERVIEW</div> -->
+				<div class = "ham-opt ham-rules" style="cursor: pointer;">RULES</div>
+				<!-- <div class = "ham-opt ham-faq">FAQS</div> -->
+				<div class = "ham-opt ham-contact" style="cursor: pointer;">CONTACT</div>
+			</div>
+		</div>
+
+  	<!-- <div style="height:50px;"></div> -->
+	</div>
+	<div class="register" style="overflow-x: hidden; overflow-y: scroll; padding-bottom: 2vh;">
+		<div class="nav">
+			<div class="logo" style="float: left; margin-left: 1vw; position: relative;">
+					<img src = "img/logo1.png">
+					<img src = "img/logo2.png">
+			</div>
+			<img class="register-close" src="img/cancel.png">
+		</div>
+		<div style="font-size: 5vh; color: white; position: relative; left: 10vw; font-family: sans-serif; margin-bottom: 4vh;">REGISTER <div style = "font-size: 3vh; width: 88vw;">(only one team member needs to register for the whole team)<br><br>BITSians should register using BITS mail only</div></div>
+		<div class="member-font">TEAM LEADER</div>
+		<div class="member-info" style="overflow-x: hidden;">
+		<!-- <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Name</label>
+      </div>
+      <div class="col-input">
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone</label>
+      </div>
+      <div class="col-input">
+        <input type="text" id="phone" name="phone">
+      </div> -->
+	  <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Full Name</label>
+      </div>
+
+      <div class="col-input">
+        <input type="email" id="mail" name="mail">
+      </div>
+	  <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone No.:</label>
+      </div>
+
+      <div class="col-input">
+		  <input type="text" id="phone" name="phone">
+      </div>
+	  <div class="col-text">
+            <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="mail">E-mail</label>
+          </div>
+          <div class="col-input">
+            <input type="email" id="mail" name="mail">
+          </div>
+
+	  <div class="member-font">MEMBER 1</div>
+	  <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Full Name</label>
+      </div>
+
+      <div class="col-input">
+        <input type="email" id="mail" name="mail">
+      </div>
+	  <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone No.:</label>
+      </div>
+
+      <div class="col-input">
+		  <input type="text" id="phone" name="phone">
+      </div>
+	  <div class="col-text">
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="mail">E-mail</label>
+        </div>
+        <div class="col-input">
+          <input type="email" id="mail" name="mail">
+        </div>
+
+	  <div id="Member2">
+	  <div class="member-font">MEMBER 2</div>
+	  <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Full Name</label>
+      </div>
+
+      <div class="col-input">
+        <input type="email" id="mail" name="mail">
+      </div>
+	  <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone No.:</label>
+      </div>
+
+      <div class="col-input">
+		  <input type="text" id="phone" name="phone">
+      </div>
+	  <div class="col-text">
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="mail">E-mail</label>
+        </div>
+        <div class="col-input">
+          <input type="email" id="mail" name="mail">
+        </div>
+
+  	</div>
+
+      <!-- <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="college">College</label>
+      </div>
+      <div class="col-input">
+        <input type="text" id="college" name="college">
+      </div>
+      <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="yos">Year of Study</label>
+      </div>
+      <div class="col-input">
+        <input type="text" id="yos" name="yos">
+      </div> -->
+      <div class="member-font">1 or 2 members allowed</div>
+  </div>
+      <div  class="addMember" style="padding-bottom: 2vh;">
+      	<input type="submit" name="addmember" value="Add Member" style="padding: 2vh 3vw; margin-top: 3vh; font-size: 2vh; background: #514d8e" id="addMemBtn">
+      </div>
+      <div class="extras">
+      <div class="col-text" style="left: 0">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="problem">College</label>
+      </div>
+      <div class="col-input" style="left: 0;">
+        <select id="problem" name="problem">
+          <option value="0">Select</option>
+          <!-- <option value="1">daVinciCreations</option>
+          <option value="2">Ericsson</option>
+          <option value="3">GE Healthcare</option>
+          <option value="4">Hackerearth</option>
+          <option value="5">Ipca</option>
+          <option value="6">Harva</option>
+          <option value="7">Rolls-Royce</option>
+          <option value="8">Gnomikx</option> -->
+        </select>
+      </div>
+      <!-- <div class="col-text" style="left: 0; width: 50%;">
+      	<label style="color: white; font-size: 2vh; font-family: sans-serif;" for="solution">Upload Solution</label>
+      </div> -->
+      <!-- <div>
+      	<input id = "solution" type="file" name="solution" value="Choose file" style="margin-top: 1vh; font-size: 1.5vh;">
+      </div> -->
+      <div style="padding-bottom: 2vh;">
+      	<input id = "submitBtn" onclick = "submitData()" type="submit" name="Submit" value="Submit" style="margin-left: 5vw; padding: 2vh 3vw; margin: 2vh 0 2vh 0; font-size: 2vh; background: #514d8e">
+  </div>
+	</div>
+
+
+	<div id = "register-message"></div>
+</div>
+	<script src = "jquery-3.2.1.min.js"></script>
+	<script src = "script.js"></script>
+	<script src="script2.js" charset="utf-8"></script>
+</body>
+</html>

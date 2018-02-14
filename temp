@@ -1,0 +1,95 @@
+
+	</div>
+	<div class="register" style="overflow-x: hidden; overflow-y: auto; padding-bottom: 2vh;">
+		<div class="nav">
+			<div class="logo" style="float: left; margin-left: 1vw; position: relative;">
+					<img src = "img/logo1.png">
+					<img src = "img/logo2.png">
+			</div>
+			<img class="register-close" src="img/cancel.png">
+		</div>
+		<div style="font-size: 5vh; color: white; position: relative; left: 10vw; font-family: sans-serif;">REGISTER
+			<div style = "font-size: 3vh; width: 88vw;">(Please read the rules properly before submitting your solution)
+			<br>(BITSians need to register using there BITS mail only)
+			</div></div>
+
+			<div class="member-font">ENTER LEADER DETAILS</div>
+			<div class="member-info" style="overflow-x: hidden;">
+
+	      <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Full name</label>
+	      </div>
+	      <div class="col-input">
+	        <input type="text" id="name" name="name">
+	      </div>
+	      <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone No.:</label><br>
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;">eg: 9911074100</label>
+	      </div>
+	      <div class="col-input">
+	        <input type="text" id="phone" name="phone">
+	      </div>
+	      <div class="col-text">
+	        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="mail">E-mail</label>
+	      </div>
+	      <div class="col-input">
+	        <input type="email" id="mail" name="mail">
+	      </div>
+		  <div class="member-font">ENTER TEAM MEMBER DETAILS</div>
+		  <div class="member-font">MEMBER 1</div>
+  		<div class="member-info" style="overflow-x: hidden;">
+
+        <div class="col-text">
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="name">Full name</label>
+        </div>
+        <div class="col-input">
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="col-text">
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="phone">Phone No.:</label><br>
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;">eg: 9911074100</label>
+        </div>
+        <div class="col-input">
+          <input type="text" id="phone" name="phone">
+        </div>
+        <div class="col-text">
+          <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="mail">E-mail</label>
+        </div>
+        <div class="col-input">
+          <input type="email" id="mail" name="mail">
+        </div>
+
+      <!-- <div class="col-text">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="vid_url">Video/Google Drive URL:</label>
+      </div> -->
+      <!-- <div class="col-input">
+        <input type="url" id="vid_url" name="vid_url">
+      </div> -->
+
+      <div class="extras">
+      <div class="col-text" style="left: 0">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="college">College</label>
+      </div>
+      <div class="col-input" style="left: 0;">
+        <select id="college" name="college">
+          <option value="0">Select</option>
+        </select>
+      </div>
+
+      <!-- <div class="col-text" style="left: 0">
+        <label style="color: white; font-size: 2vh; font-family: sans-serif;" for="problem">Problem statement:</label>
+      </div>
+      <div class="col-input" style="left: 0;">
+        <select id="problem" name="problem">
+          <option value="0">Select</option>
+        </select>
+      </div> -->
+      <!-- <div class="col-text" style="left: 0; width: 50%;">
+      	<label style="color: white; font-size: 2vh; font-family: sans-serif;" for="solution">Upload Solution</label>
+      </div> -->
+      <!-- <div>
+      	<input id = "solution" type="file" name="solution" value="Choose file" style="margin-top: 1vh; font-size: 1.5vh;">
+      </div> -->
+      <div style="padding-bottom: 2vh;">
+      	<input onclick = "submitData()" id="submitBtn" type="submit" name="Submit" value="Submit" style="margin-left: 5vw; padding: 2vh 3vw; margin: 2vh 0 15vh 0; font-size: 2vh; background: #514d8e">
+  </div>

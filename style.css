@@ -1,0 +1,568 @@
+body, html{
+	margin:0;
+	height:100vh;
+	overflow-x:hidden;
+}
+
+body{
+	position:relative;
+	background: url('img/Artboard 1.svg');
+	background-size:cover;
+}
+
+::-webkit-scrollbar{
+	display:none;
+}
+
+::-moz-scrollbar{
+	display:none;
+}
+
+@font-face{
+	font-family: 'tccm';
+	src:url('fonts/TCCM____.TTF') format('truetype');
+}
+
+@font-face{
+	font-family: 'bebas';
+	src:url('fonts/BebasNeue.otf') format('opentype');
+}
+
+.wrapper{
+	height:100%;
+}
+
+.nav{
+	height:15vh;
+	width:100vw;
+}
+
+.logo{
+	float:right;
+	height:100%;
+}
+
+.logo img{
+	height:38%;
+	padding:2vh 2vh 0 0;
+}
+
+.menu{
+	height:70%;
+	float:left;
+	margin:2vh 0 0 5vw;
+}
+
+.menu img{
+	height:60%;
+}
+
+.nav-opt{
+	display:none;
+}
+
+
+.home-body{
+	position:absolute;
+	top:15vh;
+	left:0vw;
+	height:63vh;
+	width:100vw;
+	transition:left 0.3s linear;
+}
+
+.problem-body{
+	text-align: center;
+}
+
+/*.problem-heading{
+	font-family:'bebas';
+	color:#ffffff;
+	font-size: 5vh;
+}*/
+
+.c2, .c3, .c4, .c5, .c6, .c7, .c8{
+	opacity:0;
+	position:absolute;
+	left:100vw;
+	top:0;
+}
+
+.company-info{
+	position:absolute;
+	left:10vw;
+	top:7vh;
+	height: 60vh;
+	width: 80vw;
+    background-image: linear-gradient(19deg, rgb(214, 85, 110) 0%, rgb(31, 36, 161) 100%);
+    box-shadow: rgba(0,0,0,0.35) 10px 10px 40px;
+    overflow:scroll;
+}
+
+.company-name{
+	font-family:'bebas';
+	color:#ffffff;
+	text-align: left;
+	margin:1vh 0 0 5vw;
+	font-size:6vh;
+}
+
+.download{
+	width:55vw;
+	margin:0 0 0 13vw;
+	padding:1vh;
+	font-size: 3vh;
+	border-radius:2vw;
+	text-align: center;
+	font-family: 'tccm';
+	background: #ffffff;
+	color:#867cf4;
+	font-weight: bold;
+}
+
+.download:hover{
+	cursor:pointer;
+}
+
+.about{
+	width:55vw;
+	margin:1vh 0 0 13vw;
+	font-size: 3vh;
+	font-family: 'tccm';
+	color:#ffffff;
+	text-align: left;
+	font-size: 2em;
+}
+
+.company-logo{
+	min-height: 20vh;
+	width: 60vw;
+    position: absolute;
+    top:55vh;
+    left:35vw;
+    background: #ffffff;
+    box-shadow: rgba(0,0,0,0.35) 10px 10px 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.company-logo img{
+	width:60vw;
+}
+
+.down-arrow{
+	position: absolute;
+	width:8vw;
+	top:33vh;
+	left:90vw;
+	transform: rotateZ(-90deg);
+}
+
+.up-arrow{
+	position: absolute;
+	width:8vw;
+	top:33vh;
+	left:2vw;
+	transform: rotateZ(90deg);
+}
+
+.up-arrow:hover, .down-arrow:hover{
+	cursor:pointer;
+}
+
+.title{
+	margin:5vh 0 0 5vh;
+	font-family: 'bebas';
+	font-size:10vh;
+	color:#ffffff;
+	line-height: 10vh;
+	/*text-align: center;*/
+}
+
+.register-button{
+	margin:6vh 0 0 5vh;
+	font-family: 'bebas';
+	font-size:7vh;
+	width:40vw;
+	text-align: center;
+	border-radius: 7vw;
+	color:#867cf4;
+	background: #ffffff;
+	padding:0 2vw 0 2vw;
+}
+
+.register-button:hover{
+	cursor:pointer;
+}
+
+.bodies .title{
+	margin:0 0 0 0;
+	font-size: 8vh;
+	text-align: center;
+}
+
+/*.contact-body .title{
+	margin:5vh 0 0 0;
+	font-size: 8vh;
+	text-align: center;
+}*/
+
+.content{
+	margin:0vh 5vw 0 5vw;
+	font-family: 'bebas';
+	font-size:5vh;
+	color:#ffffff;
+	text-align: center;
+}
+
+
+.bodies{
+	position:absolute;
+	top:15vh;
+	left:100vw;
+	height:63vh;
+	width:100vw;
+	transition:left 0.3s linear;
+}
+
+.big-arrow{
+	display:none;
+}
+
+.bot-nav{
+	position:absolute;
+	top:78vh;
+	height:22vh;
+	width:100vw;
+	background: #ffffff;
+	font-size:6.5vh;
+	font-family:'bebas';
+	color:#715bbc;
+	line-height: 22vh;
+	text-align: center;
+	transition:top 0.3s linear;
+}
+
+
+.hamburger{
+	position:absolute;
+	top:0;
+	left:-110vw;
+	height:100vh;
+	width:110vw;
+	background: #212121;
+	z-index:2;
+	transition:left 0.5s cubic-bezier(.55,.55,.26,1.37);
+}
+
+.ham-nav{
+	height:15vh;
+	width:100%;
+}
+
+.arrow{
+	float:left;
+	height:70%;
+	padding:3vh 0 0 17vw;
+}
+
+.arrow img{
+	height:40%;
+}
+
+.ham-body{
+	font-family:'bebas';
+	margin-left:17vw;
+}
+
+
+.ham-opt{
+	font-size:5vh;
+	color:#ffffff;
+	padding-top:1vh;
+}
+
+.ham-content{
+	font-size:5vh;
+	color:#7195de;
+}
+
+.register{
+	height: 100vh;
+	width: 100vw;
+	background: #867cf4;
+	z-index: 5;
+	position: fixed;
+	top: 100vh;
+	transition: top 0.5s cubic-bezier(0.39, 0.75, 0.34, 1.06);
+}
+
+.register-close{
+	position: absolute;
+	right: 1vw;
+	top: 2vh;
+	cursor: pointer;
+}
+
+.column{
+	display: flex;
+}
+.col-text {
+  width: 60vw;
+  margin-top: 6px;
+  position: relative;
+  margin-top: 2vh;
+  left: 12vw;
+  color: white;
+  font-size: 2vh;
+  font-family: sans-serif;
+}
+
+.col-input {
+  width: 60vw;
+  margin-top: 6px;
+  position: relative;
+  left: 12vw;
+}
+
+.invalid-email{
+	background:rgba(249, 23, 0, 0.7);
+}
+
+.extras{
+	position: relative;
+	left: 12vw;
+}
+
+.addMember{
+	position: relative;
+	left: 26.5vw;
+}
+
+.member-font{
+	font-size: 3vh;
+	color: white;
+	position: relative;
+	left: 10vw;
+	margin-top: 2vh;
+	font-family: sans-serif;
+}
+
+input[type=text], input[type=email], input[type=url], select{
+  width: 60vw;
+  padding: 1vh;
+  background: #aaa0f9;
+  border: 1px solid white;
+}
+
+input[type=submit] {
+    background-color: #695ba4;
+    color: white;
+    border: none;
+    padding: 1vh 1vw;
+    margin-top: .5vh;
+    cursor: pointer;
+}
+
+#register-message{
+	/*border:solid 2px #5950c7;*/
+	position:relative;
+	width: 92vw;
+	left: 2vw;
+	text-align: center;
+	font-family:sans-serif;
+	font-size:2.5vh;
+	color:#fff;
+	background: rgba(255, 102, 255, .5);
+	padding:2vw;
+	border-radius: 5px;
+	font-size: 3vh;
+	display:none;
+}
+
+@media all and (min-width:800px){
+
+	.nav{
+		width:100vw;
+	}
+
+	.logo{
+		float:left;
+		height:15vh;
+		margin-left:2vw;
+	}
+
+	.logo img{
+		height:45%;
+		padding:3vh 1vh 0 1vh;
+	}
+
+	.menu{
+		display:none;
+	}
+
+	.nav-opt{
+		display:block;
+		height:100%;
+		width:12%;
+		float:right;
+		font-family: 'bebas';
+		text-align: center;
+		font-size: 4vh;
+		line-height: 15vh;
+		color:#ffffff;
+		transition:font-size 0.1s linear;
+	}
+
+	.nav-opt:hover{
+		cursor:pointer;
+		font-size:4.5vh;
+	}
+
+	.home-body{
+		height:65vh;
+		width:100vw;
+	}
+
+	/*.problem-heading{
+		text-align: left;
+		font-size: 10vh;
+		margin:0 0 0 20vw;
+	}*/
+
+	.company-info{
+		height: 55vh;
+		width: 44vw;
+		position: absolute;
+		top:11vh;
+		left:30vw;
+	    background-image: linear-gradient(19deg, #0e19ec 0%, #e9aa8b);
+	}
+
+	.company-name{
+		margin:1vh 0 0 2vw;
+		font-size: 8vh;
+	}
+	.download{
+		width:26vw;
+		margin:1vh 0 0 6vw;
+		padding:1vh;
+		border-radius:1vw;
+	}
+
+	.about{
+		width:26vw;
+		margin:2vh 0 10vh 6vw;
+	}
+
+	.company-logo{
+		min-height: 30vh;
+		width: 30vw;
+	    position: absolute;
+	    top:40vh;
+	    left:65vw;
+	    background: #ffffff;
+	}
+
+	.company-logo img{
+		width:20vw;
+	}
+
+	.up-arrow{
+		position: absolute;
+		width:6vw;
+		top:3vh;
+		left:50vw;
+		transform:rotateZ(180deg);
+	}
+
+	.down-arrow{
+		position: absolute;
+		width:6vw;
+		top:68vh;
+		left:50vw;
+		transform:rotateZ(0deg);
+	}
+
+	.title{
+		margin:10vh 0 0 10vw;
+		font-family: 'bebas';
+		font-size:15vh;
+		color:#ffffff;
+		line-height: 14vh;
+	}
+
+	.register-button{
+		margin:8vh 0 0 10vw;
+		width:15vw;
+		font-family: 'bebas';
+		/*font-size:10vh;*/
+		color:#867cf4;
+		background: #ffffff;
+		border-radius:5vw;
+	}
+
+	.bot-nav{
+		postion:absolute;
+		top:88vh;
+		height:12vh;
+		line-height:13.5vh;
+		font-size: 9vh;
+		display:flex;
+		flex-direction: row;
+	}
+
+	.bot-nav span{
+		margin:0 2vw 0 0;
+		float:right;
+	}
+
+	.bot-nav span:hover{
+		cursor:pointer;
+	}
+
+	.big-arrow{
+		display:block;
+		flex-grow: 2;
+		margin-right:2vw;
+		max-width: 50vw;
+	}
+
+	/*.bot-nav span{
+		margin-left: 10vh;
+	}*/
+
+	.hamburger{
+		display:none;
+	}
+
+	.extras{
+		position: absolute;
+		top: 34vh;
+		left: 56vw;
+	}
+
+	.col-text {
+  	width: 30vw;
+  	margin-top: 6px;
+  	position: relative;
+  	margin-top: 2vh;
+  	left: 12vw;
+}
+
+	.col-input {
+  	width: 30vw;
+  	margin-top: 6px;
+ 	position: relative;
+  	left: 12vw;
+}
+
+input[type=text], input[type=email], input[type=url], select{
+  width: 30vw;
+  padding: 1vh;
+  background: #aaa0f9;
+  border: 1px solid white;
+}
+}
