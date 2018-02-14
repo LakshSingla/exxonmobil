@@ -16,11 +16,11 @@ document.getElementsByClassName("arrow")[0].addEventListener("click", hamClose);
 
 window.onresize = function(e){
 	var bodyHeight = document.body.getBoundingClientRect().height
-	var botNavHeight = document.getElementsByClassName("bot-nav")[0].getBoundingClientRect().height;
+	// var botNavHeight = document.getElementsByClassName("bot-nav")[0].getBoundingClientRect().height;
 
-	botTop = bodyHeight - botNavHeight;
+	// botTop = bodyHeight - botNavHeight;
 
-	document.getElementsByClassName("bot-nav")[0].style.top = botTop+"px";
+	// document.getElementsByClassName("bot-nav")[0].style.top = botTop+"px";
 }
 
 function rulesClick(){

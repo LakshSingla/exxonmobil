@@ -1,0 +1,10 @@
+team_name max 30char
+leader_name
+leader_email
+leader_phone max 10 digits
+
+names []
+email_ids []
+phones []
+
+college_id
