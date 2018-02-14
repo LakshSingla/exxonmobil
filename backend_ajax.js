@@ -11,8 +11,8 @@ var college = document.getElementById('problem').value;
 
 var selectColleges = document.getElementById('problem');
 
-var BASE_URL = 'http://192.168.43.141:8000/exxonmobil';
-// var BASE_URL = "https://bits-apogee.org/2018/exxonmobil";
+// var BASE_URL = 'http://192.168.43.141:8000/exxonmobil';
+var BASE_URL = "https://bits-apogee.org/2018/exxonmobil";
 
 
 // function validateEmail(email) {
@@ -89,6 +89,9 @@ function submitData(){
             complete: function(xhr, textStatus) {
                 console.log(xhr);
                 console.log(textStatus);
+                document.getElementById("register-message").style.display = "block";
+                document.getElementById("register-message").textContent = String(xhr.responseJSON.message);
+                console.log(xhr.responseJSON.responseJSON);
             }
         });
     }
@@ -97,7 +100,7 @@ function submitData(){
         document.getElementById("register-message").textContent = "Data is incorrect";
         console.log("Data is incorrect");
     }
-    console.log(sendData);
+    // console.log(sendData);
 
 }
 
@@ -114,8 +117,6 @@ $.ajax({
             option.textContent = elem.name;
             selectColleges.appendChild(option);
         });
-        document.getElementById("register-message").style.display = "block";
-        document.getElementById("register-message").textContent = String(xhr.responseJSON.message);
-        console.log(xhr.responseJSON.responseJSON);
+
     }
 });
