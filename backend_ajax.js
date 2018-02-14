@@ -7,8 +7,12 @@ var mem1_mail = document.getElementById('mem1_mail').value;
 var mem2_name = document.getElementById('mem2_name').value;
 var mem2_phone = document.getElementById('mem2_phone').value;
 var mem2_mail = document.getElementById('mem2_mail').value;
+var college = document.getElementById('problem').value;
 
-var URL = '192.168.43.141:8000/exxonmobil';
+var selectColleges = document.getElementById('problem');
+
+var BASE_URL = 'http://192.168.43.141:8000/exxonmobil';
+// var BASE_URL = "https://bits-apogee.org/2018/exxonmobil";
 
 
 // function validateEmail(email) {
@@ -30,6 +34,11 @@ function updateData(){
     mem2_name = document.getElementById('mem2_name').value;
     mem2_phone = document.getElementById('mem2_phone').value;
     mem2_mail = document.getElementById('mem2_mail').value;
+    college = document.getElementById('problem').value;
+}
+
+function validateCollege() {
+    return college !== 'notAValue';
 }
 
 function isFormValid(){
@@ -41,7 +50,8 @@ function isFormValid(){
     if(validateEmail(leader_mail) &&
     validatePhone(leader_phone) &&
     validateEmail(mem1_mail) &&
-    validatePhone(mem1_phone)
+    validatePhone(mem1_phone) &&
+    validateCollege(college)
     ){
     boolIsValidForm = true;
 }
@@ -57,6 +67,7 @@ function isFormValid(){
 function submitData(){
     var sendData = {};
     if(isFormValid()){
+        sendData.college_id = college;
         sendData.leader_name = leader_name;
         sendData.leader_phone = leader_phone;
         sendData.leader_email = leader_mail;
@@ -71,14 +82,40 @@ function submitData(){
             sendData.phones.push(mem2_phone);
             sendData.email_ids.push(mem2_mail);
         }
+        $.ajax({
+            type: 'POST',
+            url : BASE_URL + '/register_exxon/',
+            data: sendData,
+            complete: function(xhr, textStatus) {
+                console.log(xhr);
+                console.log(textStatus);
+            }
+        });
     }
     else{
+        document.getElementById("register-message").style.display = "block";
+        document.getElementById("register-message").textContent = "Data is incorrect";
         console.log("Data is incorrect");
     }
     console.log(sendData);
-    $.ajax({
-        type: 'POST',
-        url : URL,
-        data: sendData
-    });
+
 }
+
+$.ajax({
+    type: 'GET',
+    url :  BASE_URL + '/college_list',
+    complete : function(xhr, textStatus){
+        console.log(xhr.responseJSON);
+        console.log(textStatus);
+        xhr.responseJSON.colleges.forEach(function(elem){
+            console.log(elem);
+            var option = document.createElement('option');
+            option.setAttribute('value', String(elem.id));
+            option.textContent = elem.name;
+            selectColleges.appendChild(option);
+        });
+        document.getElementById("register-message").style.display = "block";
+        document.getElementById("register-message").textContent = String(xhr.responseJSON.message);
+        console.log(xhr.responseJSON.responseJSON);
+    }
+});
