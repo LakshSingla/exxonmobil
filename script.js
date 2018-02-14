@@ -185,27 +185,27 @@ var colleges;
 		console.log(err);
 	}
 });*/
-$.ajax({
-	type:'GET',
-	// url:'https://bits-apogee.org/2018/hackathon/problemstatements/',
-	url:'https://bits-apogee.org/2018/api/colleges/',
-	complete:function(xhr,textstatus){
-		colleges = xhr.responseJSON.colleges;
+// $.ajax({
+// 	type:'GET',
+// 	// url:'https://bits-apogee.org/2018/hackathon/problemstatements/',
+// 	url:'https://bits-apogee.org/2018/api/colleges/',
+// 	complete:function(xhr,textstatus){
+// 		colleges = xhr.responseJSON.colleges;
+//
+// 		for(j=0;j<colleges.length;j++){
+// 			var option = document.createElement("option");
+// 			option.setAttribute("value", colleges[j].id);
+// 			option.innerHTML = colleges[j].name;
+//
+// 			document.getElementById("college").appendChild(option);
+// 		}
+// 	},
+// 	error:function(xhr,textstatus,err){
+// 		console.log(err);
+// 	}
+// });
 
-		for(j=0;j<colleges.length;j++){
-			var option = document.createElement("option");
-			option.setAttribute("value", colleges[j].id);
-			option.innerHTML = colleges[j].name;
-
-			document.getElementById("college").appendChild(option);
-		}
-	},
-	error:function(xhr,textstatus,err){
-		console.log(err);
-	}
-});
-
-var isFormValid = 0;
+// var isFormValid = 0;
 
 function validateEmail(email) {
    	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -521,145 +521,143 @@ document.getElementsByClassName("problem-body")[0].addEventListener("mousewheel"
 // document.getElementsByClassName("down-arrow")[0].addEventListener("click", prevCompany);
 
 
-document.getElementById("mail").addEventListener("keyup", function(){//validating leader's email
-	if(!validateEmail(this.value)){
-		isFormValid = 0;
-		this.classList.add('invalid-email');
-	}
-	else{
-		isFormValid = 1;
-		if(this.classList.contains('invalid-email')) this.classList.remove('invalid-email');
-	}
-});
+// document.getElementById("mail").addEventListener("keyup", function(){//validating leader's email
+// 	if(!validateEmail(this.value)){
+// 		isFormValid = 0;
+// 		this.classList.add('invalid-email');
+// 	}
+// 	else{
+// 		isFormValid = 1;
+// 		if(this.classList.contains('invalid-email')) this.classList.remove('invalid-email');
+// 	}
+// });
 
 //other emails' validation code is written above where new members are being added
 
 var isFileUploaded = false;
 
 // sending data
-function submitData(){
-	var email = document.getElementById("mail").value;
-	var name = document.getElementById("name").value;
-	var phone = document.getElementById("phone").value;
-	var submitBtn = document.getElementById("submitBtn");
-
-	var otherMembersMail = [];
-
-	for(i=0;i<membercount;i++){
-		otherMembersMail[otherMembersMail.length] = document.getElementsByClassName("other-members")[i].value;
-	}
-
-	if(document.getElementById("solution").files.length == 0) isFileUploaded = false;
-	else isFileUploaded = true;
-
-	// var problemSelected = document.getElementById("problem").value;
-	var collegeSelected = document.getElementById("college").value;
-	var vidURL = document.getElementById("vid_url").value;
-
-	if(document.getElementById('name').value==0){
-		document.getElementById("register-message").style.display = "block";
-		document.getElementById("register-message").innerHTML = 'Please enter the name!';
-		}
-	else if(!validatePhone(document.getElementById('phone').value))
-	{
-		document.getElementById("register-message").style.display = "block";
-		document.getElementById("register-message").innerHTML = "Enter valid phone number!";
-	}
-	else if(!validateEmail(document.getElementById('mail').value))
-	{
-		document.getElementById("register-message").style.display = "block";
-		document.getElementById("register-message").innerHTML = "Enter valid email address!";
-	}
-	// else if(problemSelected == 0){
-	// 	alert("Select Problem Statement");
-	// }
-	else if(collegeSelected == 0){
-		document.getElementById("register-message").style.display = "block";
-		document.getElementById("register-message").innerHTML = "Please sellect college!";
-	}
-	else if(!isFileUploaded && vidURL==0) {
-		document.getElementById("register-message").style.display = "block";
-		document.getElementById("register-message").innerHTML = "Please upload/enter a solution (file or video url)";
-	}
-	else
-	{
-		// disable submit button
-		submitBtn.disabled=true;
-		submitBtn.style.opacity=0.5;
-		submitBtn.style.cursor="not-allowed";
-
-		var pdf;
-		var reader = new FileReader();
-		if(isFileUploaded)
-		{
-			reader.onload = function(){
-				pdf = reader.result;
-				//window.log = pdf;
-					$.ajax({
-						type:'POST',
-						// url:"https://bits-apogee.org/2018/aic/register_team_non_bitsian/",
-						url:"https://bits-apogee.org/2018/hackathon/register_hackathon/",
-						data:{
-							name: name,
-							phone: phone,
-							email: email,
-							college_id: collegeSelected,
-							video_url: vidURL,
-							// problem_id: problemSelected,
-							pdf:pdf,
-							filename:document.getElementById("solution").files[0].name
-						},
-						complete:function(xhr,textstatus){
-							document.getElementById("register-message").style.display = "block";
-							document.getElementById("register-message").innerHTML = xhr.responseJSON.message;
-						},
-						error:function(xhr,textstatus,err){
-							console.log(err);
-						}
-					}).done(function(response){
-						// disable submit button
-						submitBtn.disabled=false;
-						submitBtn.style.opacity=1;
-						submitBtn.style.cursor="pointer";
-
-						document.getElementById("register-message").style.display = "block";
-						document.getElementById("register-message").innerHTML = response.message;
-					});
-				}
-			reader.readAsDataURL(document.getElementById("solution").files[0]);
-		}
-		else{
-			$.ajax({
-				type:'POST',
-				// url:"https://bits-apogee.org/2018/aic/register_team_non_bitsian/",
-				url:"https://bits-apogee.org/2018/hackathon/register_hackathon/",
-				data:{
-					name: name,
-					phone: phone,
-					email: email,
-					college_id: collegeSelected,
-					video_url: vidURL,
-					// problem_id: problemSelected,
-					//pdf:pdf
-				},
-				complete:function(xhr,textstatus){
-					document.getElementById("register-message").style.display = "block";
-					document.getElementById("register-message").innerHTML = xhr.responseJSON.message;
-				},
-				error:function(xhr,textstatus,err){
-					console.log(err);
-				}
-			}).done(function(response){
-				// disable submit button
-				submitBtn.disabled=false;
-				submitBtn.style.opacity=1;
-				submitBtn.style.cursor="pointer";
-
-				document.getElementById("register-message").style.display = "block";
-				document.getElementById("register-message").innerHTML = response.message;
-			});
-		}
-	}
-
-
-}
+// function submitData(){
+// 	var email = document.getElementById("mail").value;
+// 	var name = document.getElementById("name").value;
+// 	var phone = document.getElementById("phone").value;
+// 	var submitBtn = document.getElementById("submitBtn");
+//
+// 	var otherMembersMail = [];
+//
+// 	for(i=0;i<membercount;i++){
+// 		otherMembersMail[otherMembersMail.length] = document.getElementsByClassName("other-members")[i].value;
+// 	}
+//
+// 	if(document.getElementById("solution").files.length == 0) isFileUploaded = false;
+// 	else isFileUploaded = true;
+//
+// 	// var problemSelected = document.getElementById("problem").value;
+// 	var collegeSelected = document.getElementById("college").value;
+// 	var vidURL = document.getElementById("vid_url").value;
+//
+// 	if(document.getElementById('name').value==0){
+// 		document.getElementById("register-message").style.display = "block";
+// 		document.getElementById("register-message").innerHTML = 'Please enter the name!';
+// 		}
+// 	else if(!validatePhone(document.getElementById('phone').value))
+// 	{
+// 		document.getElementById("register-message").style.display = "block";
+// 		document.getElementById("register-message").innerHTML = "Enter valid phone number!";
+// 	}
+// 	else if(!validateEmail(document.getElementById('mail').value))
+// 	{
+// 		document.getElementById("register-message").style.display = "block";
+// 		document.getElementById("register-message").innerHTML = "Enter valid email address!";
+// 	}
+// 	// else if(problemSelected == 0){
+// 	// 	alert("Select Problem Statement");
+// 	// }
+// 	else if(collegeSelected == 0){
+// 		document.getElementById("register-message").style.display = "block";
+// 		document.getElementById("register-message").innerHTML = "Please sellect college!";
+// 	}
+// 	else if(!isFileUploaded && vidURL==0) {
+// 		document.getElementById("register-message").style.display = "block";
+// 		document.getElementById("register-message").innerHTML = "Please upload/enter a solution (file or video url)";
+// 	}
+// 	else
+// 	{
+// 		// disable submit button
+// 		submitBtn.disabled=true;
+// 		submitBtn.style.opacity=0.5;
+// 		submitBtn.style.cursor="not-allowed";
+//
+// 		var pdf;
+// 		var reader = new FileReader();
+// 		if(isFileUploaded)
+// 		{
+// 			reader.onload = function(){
+// 				pdf = reader.result;
+// 				//window.log = pdf;
+// 					$.ajax({
+// 						type:'POST',
+// 						// url:"https://bits-apogee.org/2018/aic/register_team_non_bitsian/",
+// 						url:"https://bits-apogee.org/2018/hackathon/register_hackathon/",
+// 						data:{
+// 							name: name,
+// 							phone: phone,
+// 							email: email,
+// 							college_id: collegeSelected,
+// 							video_url: vidURL,
+// 							// problem_id: problemSelected,
+// 							pdf:pdf,
+// 							filename:document.getElementById("solution").files[0].name
+// 						},
+// 						complete:function(xhr,textstatus){
+// 							document.getElementById("register-message").style.display = "block";
+// 							document.getElementById("register-message").innerHTML = xhr.responseJSON.message;
+// 						},
+// 						error:function(xhr,textstatus,err){
+// 							console.log(err);
+// 						}
+// 					}).done(function(response){
+// 						// disable submit button
+// 						submitBtn.disabled=false;
+// 						submitBtn.style.opacity=1;
+// 						submitBtn.style.cursor="pointer";
+//
+// 						document.getElementById("register-message").style.display = "block";
+// 						document.getElementById("register-message").innerHTML = response.message;
+// 					});
+// 				}
+// 			reader.readAsDataURL(document.getElementById("solution").files[0]);
+// 		}
+// 		else{
+// 			$.ajax({
+// 				type:'POST',
+// 				// url:"https://bits-apogee.org/2018/aic/register_team_non_bitsian/",
+// 				url:"https://bits-apogee.org/2018/hackathon/register_hackathon/",
+// 				data:{
+// 					name: name,
+// 					phone: phone,
+// 					email: email,
+// 					college_id: collegeSelected,
+// 					video_url: vidURL,
+// 					// problem_id: problemSelected,
+// 					//pdf:pdf
+// 				},
+// 				complete:function(xhr,textstatus){
+// 					document.getElementById("register-message").style.display = "block";
+// 					document.getElementById("register-message").innerHTML = xhr.responseJSON.message;
+// 				},
+// 				error:function(xhr,textstatus,err){
+// 					console.log(err);
+// 				}
+// 			}).done(function(response){
+// 				// disable submit button
+// 				submitBtn.disabled=false;
+// 				submitBtn.style.opacity=1;
+// 				submitBtn.style.cursor="pointer";
+//
+// 				document.getElementById("register-message").style.display = "block";
+// 				document.getElementById("register-message").innerHTML = response.message;
+// 			});
+// 		}
+// 	}
+// }
