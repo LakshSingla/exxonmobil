@@ -65,8 +65,12 @@ function isFormValid(){
 }
 
 function submitData(){
+    
+    // document.getElementById('submitBtn').disabled = true;
     var sendData = {};
     if(isFormValid()){
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('submitBtn').style.backgroundColor = "#afaaf7";
         sendData.college_id = college;
         sendData.leader_name = leader_name;
         sendData.leader_phone = leader_phone;
@@ -87,11 +91,17 @@ function submitData(){
             url : BASE_URL + '/register_exxon/',
             data: sendData,
             complete: function(xhr, textStatus) {
-                console.log(xhr);
-                console.log(textStatus);
+                // console.log(xhr);
+                // console.log(textStatus);
                 document.getElementById("register-message").style.display = "block";
                 document.getElementById("register-message").textContent = String(xhr.responseJSON.message);
                 console.log(xhr.responseJSON.responseJSON);
+                // document.getElementById('submitBtn').disabled = true;
+                // document.getElementById('submitBtn').style.backgroundColor = "#afaaf7";
+            },
+            error: function(){
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').style.backgroundColor = "#514d8e";
             }
         });
     }
@@ -108,10 +118,10 @@ $.ajax({
     type: 'GET',
     url :  BASE_URL + '/college_list',
     complete : function(xhr, textStatus){
-        console.log(xhr.responseJSON);
-        console.log(textStatus);
+        // console.log(xhr.responseJSON);
+        // console.log(textStatus);
         xhr.responseJSON.colleges.forEach(function(elem){
-            console.log(elem);
+            // console.log(elem);
             var option = document.createElement('option');
             option.setAttribute('value', String(elem.id));
             option.textContent = elem.name;
